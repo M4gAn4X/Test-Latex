@@ -1,0 +1,237 @@
+%% =====================================================
+%% formato.sty - Paquete de formato personalizado para documentos académicos
+%% =====================================================
+\ProvidesPackage{formato}
+
+%% =====================================================
+%% PAQUETES BÁSICOS
+%% =====================================================
+\RequirePackage{graphicx}          % Soporte para inserción de imágenes
+\RequirePackage{etoolbox}          % Herramientas programáticas para LaTeX
+\RequirePackage{titlesec}          % Personalización de títulos de secciones
+\RequirePackage{setspace}          % Control de interlineado
+\RequirePackage{titletoc}          % Personalización de la tabla de contenidos
+\RequirePackage{fancyhdr}          % Control avanzado de encabezados y pies
+
+%% =====================================================
+%% PAQUETES DE FORMATO Y TIPOGRAFÍA
+\RequirePackage{xcolor}            % (asegura colores antes de definirlos)
+\RequirePackage{colortbl}          % Soporte de colores para tablas (compatible con xcolor)
+
+% ---- COLORES (para zebra y encabezados) DEFINIDOS PRIMERO ----
+\definecolor{lightgray}{gray}{0.9}
+\definecolor{tablaxHeader}{HTML}{000080}
+\definecolor{tablaxStripe}{HTML}{D1EDFB}
+
+% Espaciado entre filas de tablas
+\renewcommand{\arraystretch}{1.2}
+
+% Configura los márgenes de tablas largas para que ocupen todo el ancho
+% (estas dos líneas daban error porque no tenían valor)
+
+% Entorno personalizado para tablas largas con encabezado gris claro
+\newenvironment{tablaestilizada}[1]{%
+\begin{center}
+\small
+\begin{longtable}{#1}
+\rowcolor{lightgray}
+}{%
+\end{longtable}
+\end{center}
+}
+%% =====================================================
+
+\RequirePackage{longtable}
+\RequirePackage[utf8]{inputenc}    % Codificación UTF-8 para caracteres especiales
+\RequirePackage[T1]{fontenc}       % Codificación de fuentes para caracteres acentuados
+\RequirePackage{lmodern}           % <-- texto nítido (evita bitmap)
+\RequirePackage{microtype}         % <-- mejor espaciado/cortes
+\RequirePackage[spanish]{babel}    % Traducción de elementos automáticos (tabla, figura, etc.)
+\RequirePackage{geometry}          % Configuración del tamaño de la página
+\geometry{
+  a4paper,                         % Tamaño A4
+  margin=2.54cm                    % Márgenes APA (1 pulgada = 2.54cm)
+}
+
+\RequirePackage{lscape}            % Para páginas en orientación horizontal
+\RequirePackage{array}             % Mejoras en tablas
+\RequirePackage{multirow}          % Combinar filas en tablas
+\RequirePackage{multicol}          % Para múltiples columnas
+\RequirePackage{booktabs}
+\usepackage{longtable}             % Tablas con estilo profesional
+\RequirePackage{float}             % Control sobre la posición de figuras/tablas
+\RequirePackage{courier}           % Fuente monoespaciada Courier para código
+\RequirePackage{enumitem}          % Control avanzado de listas
+
+%% =====================================================
+%% PAQUETES PARA MATEMÁTICAS
+%% =====================================================
+\RequirePackage{amsmath}           % Entornos matemáticos avanzados
+\RequirePackage{amssymb}           % Símbolos matemáticos adicionales
+\RequirePackage{amsfonts}          % Fuentes matemáticas adicionales
+\RequirePackage{amsthm}            % Entornos para teoremas y demostraciones
+\RequirePackage{mathtools}         % Extensiones para amsmath
+
+%% =====================================================================
+%% PAQUETES PARA GRÁFICOS Y COLOR
+%% ========================================================================
+% (xcolor ya cargado arriba)
+\RequirePackage{wrapfig}           % Texto alrededor de figuras
+\RequirePackage{tikz}              % Para dibujos y gráficos vectoriales
+\RequirePackage{pgfplots}          % Para gráficos estadísticos
+\pgfplotsset{compat=1.18}
+\RequirePackage{caption}           % Personalización de leyendas
+\RequirePackage{subcaption}        % Soporte para subfiguras
+
+%% =====================================================
+%% PAQUETES PARA CÓDIGO FUENTE
+%% =====================================================
+\RequirePackage{listings}          % Para mostrar código fuente con estilo
+\RequirePackage{minted}            % Resaltado de sintaxis avanzado para código (requiere -shell-escape)
+\RequirePackage{algorithm}         % Entorno para algoritmos
+\RequirePackage{algpseudocode}     % Pseudocódigo
+
+% Configuración básica para listings
+\lstset{
+  basicstyle=\small\ttfamily,
+  keywordstyle=\bfseries\color{blue},
+  commentstyle=\itshape\color{green!60!black},
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\tiny,
+  frame=single,
+  breaklines=true
+}
+
+%% =====================================================
+%% HIPERVÍNCULOS Y URLs
+%% =====================================================
+\RequirePackage[hyphens]{url}        % URLs con guiones
+\RequirePackage[hidelinks]{hyperref} % Hipervínculos sin color ni recuadro
+
+%% =====================================================
+%% PAQUETES DE ENCABEZADO Y PIE DE PÁGINA
+%% =====================================================
+\usepackage{graphicx} % (ya cargado arriba; lo mantengo como lo tenías)
+
+\pagestyle{fancy}
+\fancyhf{} % Limpia todo
+
+% (inicializaciones para evitar undefined si falta algún dato)
+\providecommand{\@asignatura}{}
+\providecommand{\@semestre}{}
+\providecommand{\@titulo}{}
+
+% Imágenes en encabezado
+\fancyhead[L]{\includegraphics[height=0.9cm]{images/escudo.png}\hspace{0.5em}\@asignatura}
+\fancyhead[R]{\@semestre\hspace{0.5em}\includegraphics[height=0.9cm]{images/logo.png}}
+
+% Pie de página
+\fancyfoot[L]{\@titulo}
+\fancyfoot[R]{\thepage}
+
+% Líneas decorativas
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\setlength{\headheight}{30pt}      % evita warnings de fancyhdr
+
+%% =====================================================
+%% BIBLIOGRAFÍA EN ESTILO APA
+%% =====================================================
+\RequirePackage{csquotes} % recomendado con babel+biblatex
+\RequirePackage[
+    backend=bibtex,
+    style=authoryear,
+    natbib=true,
+    sorting=nyt,
+    maxcitenames=2,
+    maxbibnames=99
+]{biblatex}
+
+\setlength\bibitemsep{1\baselineskip}
+\addbibresource{bibliografia.bib}
+
+%% =====================================================
+%% FECHA EN FORMATO ESPAÑOL
+%% =====================================================
+\newcommand{\mes}{\ifcase\month\or
+  Enero\or Febrero\or Marzo\or Abril\or Mayo\or Junio\or
+  Julio\or Agosto\or Septiembre\or Octubre\or Noviembre\or Diciembre\fi}
+
+%% =====================================================
+%% COMANDOS PERSONALIZADOS PARA LA PORTADA Y GESTIÓN DE AUTORES
+%% =====================================================
+\newcommand{\tipo}[1]{\gdef\@tipo{#1}}
+\newcommand{\titulo}[1]{\gdef\@titulo{#1}}
+\newcommand{\orientador}[1]{\gdef\@orientador{#1}}
+\newcommand{\semestre}[1]{\gdef\@semestre{#1}}
+\newcommand{\asignatura}[1]{\gdef\@asignatura{#1}}
+
+% Lista para almacenar múltiples autores
+\newtoggle{firstauthor}
+\toggletrue{firstauthor}
+
+% Contador para el número de autores
+\newcounter{numeroautores}
+\setcounter{numeroautores}{0}
+
+% Inicializa la lista de autores vacía
+\def\listaautores{}
+
+% Comando para agregar un autor a la lista
+\newcommand{\addautor}[1]{%
+  \stepcounter{numeroautores}%
+  \iftoggle{firstauthor}{%
+    \gdef\listaautores{#1}%
+    \togglefalse{firstauthor}%
+  }{%
+    \g@addto@macro\listaautores{\par #1}%
+  }%
+}
+
+%% =====================================================
+%% COMANDOS PARA CONFIGURACIÓN DE NUMERACIÓN DE PÁGINAS
+%% =====================================================
+% Cambia a numeración romana para páginas preliminares
+\newcommand{\iniciarpreliminar}{%
+  \pagenumbering{roman}
+  \setcounter{page}{1}
+}
+
+% Cambia a numeración arábiga para contenido principal
+\newcommand{\iniciarprincipal}{%
+  \clearpage
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+}
+
+%% =====================================================
+%% ESPACIADO ENTRE PÁRRAFOS Y CONFIGURACIÓN APA
+%% =====================================================
+\setlength{\parskip}{0.5em}          % Espaciado entre párrafos
+\setlength{\parindent}{1.27cm}       % Sangría APA (0.5 pulgadas)
+\setlist{leftmargin=1.27cm}
+
+%% =====================================================
+%% FIN DEL PAQUETE
+%% =====================================================
+% =====================================================
+% ENTORNO PERSONALIZADO PARA TABLAS ESTILIZADAS (VARIANTE ZEBRA)
+% =====================================================
+
+% Evita colisión por doble definición si ya se declaró antes
+\makeatletter
+\@ifundefined{tablaestilizada@zebra}{%
+  \newenvironment{tablaestilizada@zebra}[1]{%
+    \rowcolors{2}{tablaxStripe}{white}% zebra
+    \begin{center}\small
+    \begin{longtable}{#1}
+    \rowcolor{grisclaro}% encabezado gris
+  }{%
+    \end{longtable}
+    \end{center}
+  }%
+}{}
+\makeatother
+
+\endinput

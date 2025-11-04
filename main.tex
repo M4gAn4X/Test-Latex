@@ -1,0 +1,88 @@
+\documentclass[10pt]{article}
+
+%% Carga del paquete de formato personalizado
+\usepackage{tcolorbox}
+\usepackage{makecell}
+\usepackage{formato}
+
+%% =====================================================
+%% CONFIGURACIÓN DE LOS DATOS DEL DOCUMENTO
+%% =====================================================
+\tipo{Proyecto de Asignatura}
+\titulo{Sistema de información para tutorías para la Escuela Profesional de Ingeniería Informática y de sistemas}
+\asignatura{Métodologías  y Desarollo de Software I}
+\orientador{Ibarra Zambrano Waldo Elio}
+\semestre{2025-II}
+%hay un apartado para autores, comenta los autores que no estan
+%% =====================================================
+%% REGISTRO DE AUTORES/ESTUDIANTES
+%% =====================================================
+
+% Para múltiples autores
+\addautor{Magaña Osorio Jhoel Fabrizzio}
+\addautor{Colque Quispe Fidel Enrique}
+\addautor{Gallegos Silva Marco Abel}
+\addautor{Vasquez Mamani Raul Franshesco }
+\addautor{Santos Pillco Eduardo Jhosef}
+
+%\addautor{Apellido1 Apellido2, Nombre1 Nombre2}
+
+%% =====================================================
+%% INICIO DEL DOCUMENTO
+%% =====================================================
+\begin{document}
+
+%% =====================================================
+%% CARATULA (Portada)
+%% =====================================================
+\thispagestyle{empty}  % La portada no tiene numeración de página
+\makeatletter
+\input{portada.tex}    % Incluye la portada
+\makeatother
+
+%% =====================================================
+%% INICIO DE SECCIONES PRELIMINARES CON NUMERACIÓN ROMANA
+%% %% =====================================================
+\iniciarpreliminar
+
+%% =====================================================
+%% TABLA DE CONTENIDOS
+%% =====================================================
+\tableofcontents
+\clearpage
+
+%% =====================================================
+%% ÍNDICES DE FIGURAS Y TABLAS
+%% =====================================================
+\listoffigures
+\clearpage
+
+\listoftables
+\clearpage
+
+%% =====================================================
+%% CAMBIO A NUMERACIÓN ARÁBIGA PARA EL CONTENIDO PRINCIPAL
+%% =====================================================
+\iniciarprincipal
+
+%% =====================================================
+%% INGRESO DE SECCIONES DEL DOCUMENTO
+%% =====================================================
+\input{sections/1-Presentacion}
+\input{sections/2-AplicacionInfluencia}
+\input{sections/3- DescripcionProblematica}
+\input{sections/4-Objetivos}
+\input{sections/5-Descripcion del Proyecto}
+\input{sections/6-Implementación de Proyecto}
+
+%% =====================================================
+%% BIBLIOGRAFÍA
+%% =====================================================
+%\clearpage
+%\nocite{*}
+%\printbibliography[title=Referencias Bibliográficas]
+
+%% =====================================================
+%% FIN DEL DOCUMENTO
+%% =====================================================
+\end{document}

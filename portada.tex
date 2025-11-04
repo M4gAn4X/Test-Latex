@@ -1,0 +1,74 @@
+%% =====================================================
+%% Portada - Documento académico
+%% =====================================================
+\begin{titlepage}
+    \thispagestyle{empty}
+    
+    %% =====================================================
+    %% ENCABEZADO INSTITUCIONAL
+    %% =====================================================
+    \begin{center}
+        {\large UNIVERSIDAD NACIONAL DE SAN ANTONIO ABAD DEL CUSCO}\\[0.3cm]
+        {\large FACULTAD DE INGENIERÍA ELÉCTRICA, ELECTRÓNICA, INFORMÁTICA Y MECÁNICA}\\[0.3cm]
+        {\large ESCUELA PROFESIONAL DE INGENIERÍA INFORMÁTICA Y DE SISTEMAS}
+    \end{center}
+    
+    %% =====================================================
+    %% ESCUDO/LOGO INSTITUCIONAL
+    %% =====================================================
+     \vspace{0.25cm}
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}{0.4\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{images/escudo.png}
+        \end{minipage}
+        \hspace{2em}
+        \begin{minipage}{0.4\textwidth}
+            \centering
+            \includegraphics[width=0.865\linewidth]{images/logo.png}
+        \end{minipage}
+    \end{figure}
+    
+    %% =====================================================
+    %% TÍTULO DEL DOCUMENTO
+    %% =====================================================
+    \begin{center}
+        \Large{\textbf{\@tipo}} \\[0.3cm]
+        \rule{160mm}{0.3mm} \\[0.3cm]
+        {\Large \textbf{\@titulo}} \\[0.1cm]
+        \rule{160mm}{0.3mm}
+    \end{center}
+    
+    \vspace{1cm}
+    
+    %% =====================================================
+    %% INFORMACIÓN DEL CURSO Y PARTICIPANTES
+    %% =====================================================
+    \noindent\hspace*{0.5\textwidth}{
+        \parbox{0.5\textwidth}{
+            \raggedright
+            \textbf{Asignatura:} \\
+            \hspace*{2em} \@asignatura \\[0.5cm]
+            \textbf{Docente:} \\
+            \hspace*{2em} \@orientador \\[0.5cm]
+            % Condicional para singular/plural de "Estudiante(s)"
+            \textbf{\ifnum\value{numeroautores}>1 Estudiantes:\else Estudiante:\fi} \\
+            \hspace*{2em}
+            \parbox{\dimexpr\linewidth-2em\relax}{
+                \raggedright
+                \vspace{0.3em}
+                \listaautores
+            }
+        }
+    }
+    
+    \vfill
+    
+    %% =====================================================
+    %% FECHA DE PUBLICACIÓN
+    %% =====================================================
+    \begin{center}
+        Cusco - Perú \\ \the\year
+    \end{center}
+\end{titlepage}

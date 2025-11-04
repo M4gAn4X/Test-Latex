@@ -1,0 +1,462 @@
+\section{Implementación del Proyecto}
+
+\subsection{Product Backlog}
+El Product Backlog constituye la lista priorizada de requisitos funcionales y técnicos que guían el desarrollo incremental del sistema. Cada elemento se expresa mediante una épica, desglosada en historias de usuario y tareas que permiten alcanzar incrementos funcionales del producto.
+El backlog se inspecciona y adapta de forma iterativa a lo largo de todo el proyecto, manteniendo trazabilidad entre épicas, historias y entregables por sprint.
+
+\subsubsection{Sprint 1 – Planificación y Diseño Visual del Proyecto}
+El Sprint 1, correspondiente al periodo del 09 al 17 de octubre de 2025, tuvo como propósito establecer los cimientos organizativos y visuales del Sistema de Información para Tutorías.
+En esta etapa se definieron los objetivos del sistema, se configuró el entorno de trabajo colaborativo y se produjeron los primeros diseños de interfaz. Las épicas incluidas en este sprint fueron \textbf{E1. Planificación del Proyecto} y \textbf{E2. Diseño Visual y Estructura del Proyecto}.
+
+%% Insertamos el Product Backlog del Sprint 1
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{2cm}| m{5cm}| m{7.5cm}|}
+\hline
+% ================= CABECERA =================
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Épica}} &
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Historia de Usuario}} &
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Tareas}}\\
+\hline
+
+% ================= E1 =================
+\multirow{3}{*}{\makecell[cc]{\\ \\ \\ \\ E1:\\Planificación\\del Proyecto}} 
+    & \cellcolor{tablaxStripe}HU1: Como equipo de desarrollo, queremos definir las herramientas tecnológicas que se utilizarán (lenguajes, frameworks, gestores de BD y entornos de diseño) para garantizar uniformidad y compatibilidad entre componentes.
+    & \cellcolor{tablaxStripe}T1 – Seleccionar herramientas de desarrollo backend y frontend.\newline
+      T2 – Seleccionar herramientas de diseño y prototipado.\newline
+      T3 – Determinar gestor de base de datos y herramientas de modelado.\newline
+      T4 – Documentar todas las herramientas seleccionadas en un informe formal.\\
+
+    & HU2: Como Product Owner, quiero definir el alcance y objetivos del sistema para que el equipo tenga una visión común del producto y se oriente correctamente durante todo el proyecto.
+    & T5 – Redactar la presentación, ámbito, problemática, objetivos y descripción del proyecto.\newline
+      T6 – Revisar y validar el documento de presentación.\newline
+      T7 – Elaborar el documento de planificación de Sprints y Product Backlog.\newline
+      T8 – Revisar y aprobar los documentos del Sprint 1.\\
+
+    & \cellcolor{tablaxStripe}HU3: Como Scrum Master, quiero establecer la organización de trabajo en Azure DevOps para coordinar las tareas, visualizar el progreso y mantener una comunicación efectiva del equipo.
+    & \cellcolor{tablaxStripe}T9 – Crear el proyecto principal en Azure DevOps.\newline
+      T10 – Configurar el tablero de trabajo (Boards).\newline
+      T11 – Registrar las épicas del proyecto.\newline
+      T12 – Verificar permisos y sincronización del equipo.\\
+\hline
+
+% ================= E2 =================
+\multirow{2}{*}{\makecell[cc]{E2:\\Diseño visual\\y estructura\\del Proyecto}}
+    & HU4: Como desarrollador, quiero diseñar un modelo de base de datos inicial para asegurar que el sistema gestione correctamente la información de alumnos, tutores y tutorías.
+    & T13 – Diseñar el esquema base de la base de datos.\newline
+      T14 – Definir relaciones entre las tablas.\newline
+      T15 – Generar el script SQL del modelo de datos.\newline
+      T16 – Exportar y documentar el diagrama entidad–relación.\\
+
+    & \cellcolor{tablaxStripe}HU5: Como diseñador UX/UI, quiero crear los wireframes del sistema para visualizar el flujo principal de pantallas antes de pasar al desarrollo.
+    & \cellcolor{tablaxStripe}T17 – Crear la cuenta en Figma.\newline
+      T18 – Crear el proyecto de diseño en Figma.\newline
+      T19 – Diseñar la pantalla de inicio de sesión.\newline
+      T20 – Diseñar el panel principal del sistema.\newline
+      T21 – Diseñar el formulario de registro de tutorías.\newline
+      T22 – Diseñar la pantalla de listado de tutorías.\newline
+      T23 – Revisar y validar los wireframes creados.\\
+\hline
+\end{tabular}
+
+\caption{Product Backlog detallado correspondiente al Sprint 1}
+\label{tab:planificacion-proyecto}
+\end{table}
+
+\subsubsection{Sprint 2 – Login y Módulo del Administrador - Parte I}
+El Sprint 2, correspondiente al periodo del 20 de octubre al 3 de noviembre de 2025, tendrá como propósito implementar el módulo de autenticación de usuarios y gestión inicial del administrador.
+En esta etapa se desarrollarán las funcionalidades de inicio de sesión, creación del cronograma de tutorías, asignación de tutorados a tutores y configuración de los tipos de tutoría.
+Las épicas incluidas serán \textbf{E3. Sistema de Login y Roles y E4. Funciones del Administrador – Parte I}.
+
+%% ===============================================
+%% Insertamos el Product Backlog del Sprint 2
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{2.25cm}| m{5cm}| m{7.5cm}|}
+\hline
+% ***************** CABECERA *********************
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Épica}} &
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Historia de Usuario}} &
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Tareas}}\\
+\hline
+
+% ================= E1 =================
+\multirow{2}{*}{\makecell[cc]{\\  E3:\\ Sistema de\\ Login y \\ Roles}}
+    & HU28: Como product owner necesito que los integrantes del equipo aprendan y manejen herramientas de desarrollo de software para la elaboración del proyecto, con el fin de trabajar de manera paralela y colaborativa.
+    & T - Capacitación de Eduardo \newline
+    T - Capacitación de Marco\newline
+    T - Capacitación de Franshesco\newline
+    T - Capacitación de Jhoel\newline
+    T - Capacitación de Fidel\\
+    
+    & \cellcolor{tablaxStripe}HU6: Como usuario, quiero iniciar sesión con mi correo institucional y contraseña, para acceder únicamente al panel correspondiente a mi rol (Administrador, Tutor, Verificador o Tutorado).
+    & \cellcolor{tablaxStripe}
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \\
+
+    & HU7: Como usuario, quiero cerrar sesión de forma segura para evitar accesos no autorizados a mi cuenta.
+    & T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+\hline
+
+% ================= E2 =================
+\multirow{4}{*}{\makecell[cc]{\\ \\ \\ \\ E4:\\ Funciones del\\ Administrador\\ – Parte I}}
+    & \cellcolor{tablaxStripe}HU8: Como administrador, necesito crear/editar/eliminar el cronograma del semestre para organizar fechas y sesiones de tutoría.
+    & \cellcolor{tablaxStripe}
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \\
+
+    & HU9: Como administrador, necesito asignar tutorados a tutores para equilibrar la carga y formalizar la atención.
+    & 
+    T – \newline
+    T – \newline
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \newline
+    T – \\
+
+    & \cellcolor{tablaxStripe}HU10: Como administrador, necesito reasignar un grupo de tutorados a otro tutor para reorganizar eficientemente sin hacerlo uno por uno.
+    & \cellcolor{tablaxStripe}
+    T – \newline
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \\
+
+    &HU11: Como administrador, necesito definir y parametrizar los tipos de tutoría (Académica, Personal, Profesional) para estandarizar los registros de los tutores.
+    &
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \newline
+    T – \\
+\hline
+\end{tabular}
+
+\caption{Product Backlog detallado correspondiente al Sprint 2}
+\label{tab:planificacion-proyecto}
+\end{table}
+%% ==============================================
+
+\subsubsection{Sprint 3 – Módulo del Administrador - Parte II y Tutor}
+El Sprint 3, correspondiente al periodo del \textbf{4 al 17 de noviembre de 2025}, tendrá como propósito completar las funcionalidades del administrador y desarrollar el módulo del tutor.
+Se abordarán las operaciones de reasignación individual de tutorados, consulta de historial, registro y modificación de tutorías, así como la generación de constancias y reportes.
+Las épicas incluidas serán \textbf{E5. Funciones del Administrador – Parte II y E6. Funciones del Tutor}.
+
+%% Insertamos el Product Backlog del Sprint 3
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{2.25cm}| m{5cm}| m{7.5cm}|}
+\hline
+% ***************** CABECERA *********************
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Épica}} &
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Historia de Usuario}} &
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Tareas}}\\
+\hline
+
+% ================= E1 =================
+\multirow{3}{*}{\makecell[cc]{\\ \\ \\E5:\\ Funciones \\del \\ Administrador \\– Parte II}} 
+    & \cellcolor{tablaxStripe}HU11: Como administrador, necesito cambiar tutorados entre tutores para balancear la carga académica y mantener la organización del cronograma.
+    & \cellcolor{tablaxStripe}
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \\
+
+    & HU12: Como administrador, necesito imprimir la relación de tutorados por tutor y ambiente para tener un control documentado de las asignaciones.
+    & T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+      
+    & \cellcolor{tablaxStripe} HU13: Como administrador, necesito consultar las tutorías realizadas en semestres anteriores para revisar el historial académico de los estudiantes.
+    & \cellcolor{tablaxStripe}
+    T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+\hline
+
+% ================= E2 =================
+\multirow{4}{*}{\makecell[cc]{\\ \\ \\ \\ E6:\\ Funciones\\ del \\ Tutor}}
+    & HU14: Como tutor, necesito registrar las tutorías académicas, personales y profesionales para llevar un seguimiento integral del progreso de mis estudiantes.
+    &
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \\
+
+    & \cellcolor{tablaxStripe}HU15: Como tutor, necesito editar las tutorías registradas antes del cierre del cronograma para corregir errores o agregar información adicional.
+    & \cellcolor{tablaxStripe}
+    T – \newline
+    T – \newline
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \newline
+    T – \\
+
+    & HU16: Como tutor, necesito generar constancias PDF de tutorías para entregar al estudiante un comprobante oficial de su participación.
+    & 
+    T – \newline
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \\
+
+    &\cellcolor{tablaxStripe} HU17: Como tutor, necesito generar una lista general de los estudiantes atendidos para registrar oficialmente quiénes completaron sus tutorías. de los tutores.
+    &\cellcolor{tablaxStripe}
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \newline
+    T – \\
+\hline
+\end{tabular}
+
+\caption{Product Backlog detallado correspondiente al Sprint 3}
+\label{tab:planificacion-proyecto}
+\end{table}
+
+
+%% ===============================================
+\subsubsection{Sprint 4 – Módulo del Verificador y Tutorados}
+El Sprint 4, correspondiente al periodo del \textbf{18 de noviembre al 1 de diciembre de 2025}, tendrá como propósito desarrollar los módulos del verificador y tutorado, permitiendo la interacción entre ambos roles.
+Durante esta etapa se implementarán las funciones de consulta de tutorías, seguimiento académico, notificaciones automáticas y visualización de observaciones y constancias.
+La épica incluida será \textbf{E7. Funciones del Verificador y Tutorados}.
+
+%% Insertamos el Product Backlog del Sprint 4
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{2.25cm}| m{5cm}| m{7.5cm}|}
+\hline
+% ***************** CABECERA *********************
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Épica}} &
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Historia de Usuario}} &
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Tareas}}\\
+\hline
+
+% ================= E1 =================
+\multirow{6}{*}{\makecell[cc]{\\ \\ \\ \\ \\ \\ \\ \\ \\E7: Funciones \\del\\ Verificador \\y Tutorados}} 
+    & \cellcolor{tablaxStripe}HU18: Como verificador, necesito consultar las tutorías registradas por semestre para validar que se cumplan las sesiones académicas, personales y profesionales.
+    & \cellcolor{tablaxStripe}
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \\
+
+    & HU19: Como verificador, necesito hacer seguimiento de las tutorías realizadas por un estudiante o un tutor para evaluar el cumplimiento y progreso de las actividades.
+    & T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+      
+    & \cellcolor{tablaxStripe} HU20: Como tutorado, necesito recibir notificaciones automáticas con la fecha y hora de mis tutorías para asistir puntualmente y cumplir con las sesiones.
+    & \cellcolor{tablaxStripe}
+    T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+
+    & HU21: Como tutorado, necesito seleccionar un horario disponible para mis tutorías para coordinar mi atención con el tutor asignado.
+    & T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+
+    & \cellcolor{tablaxStripe} HU22: Como tutorado, necesito visualizar mis tutorías pasadas y descargar mis constancias para llevar un registro personal de mis sesiones.
+    & \cellcolor{tablaxStripe}
+    T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+
+    & HU23: Como tutorado, necesito ver las observaciones registradas por mis tutores para conocer mi progreso y aspectos a mejorar.
+    & T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+   
+\hline
+\end{tabular}
+
+\caption{Product Backlog detallado correspondiente al Sprint 4}
+\label{tab:planificacion-proyecto}
+\end{table}
+
+
+%% ===============================================
+\subsubsection{Sprint 5 – Integración, Seguridad y Entrega Final}
+El Sprint 5, correspondiente al periodo (por definir), tiene como objetivo principal el despliegue del proyecto, abarcando la integración de los distintos componentes desarrollados, la implementación de medidas de seguridad y la preparación para la entrega final al cliente. La épica incluída será \textbf{E8. Integración, Seguridad y Entrega Final}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{2.25cm}| m{5cm}| m{7.5cm}|}
+\hline
+% ***************** CABECERA *********************
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Épica}} &
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Historia de Usuario}} &
+\textcolor{white}{\cellcolor{tablaxHeader}\textbf{Tareas}}\\
+\hline
+
+% ================= E1 =================
+\multirow{6}{*}{\makecell[cc]{\\ \\ \\ \\ \\ \\ \\E8:Integración, \\Seguridad\\ y entrega \\final}} 
+    & \cellcolor{tablaxStripe}HU24: Como usuario del sistema, necesito que el sistema aplique un control de acceso por rol para garantizar que cada usuario solo acceda a las funciones y datos que le corresponden.
+    & \cellcolor{tablaxStripe}
+    T – \newline
+    T – (Por definir) \newline
+    T – \newline
+    T – \\
+
+    & HU25: Como equipo de desarrollo, necesitamos integrar todos los módulos creados para entregar una versión completa y funcional del sistema de tutorías.
+    & T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+      
+    & \cellcolor{tablaxStripe} HU26: Como Scrum Master, necesito realizar las pruebas finales y la retrospectiva del proyecto para garantizar la calidad del sistema y documentar las mejoras futuras.
+    &\cellcolor{tablaxStripe}
+      T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+
+    & HU27: Como Product Owner, necesito compilar toda la documentación del sistema para entregar el producto final de manera formal y completa.
+    & T – \newline
+      T – (Por definir)\newline
+      T – \newline
+      T – \\
+\hline
+\end{tabular}
+
+\caption{Product Backlog detallado correspondiente al Sprint 5}
+\label{tab:planificacion-proyecto}
+\end{table}
+%% ===============================================
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/backlog_1.png}
+    \caption{Produck Backlog realizado en Azure Dev Ops (1)}
+    \label{fig:comparacion_tutorias}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/backlog_2.png}
+    \caption{Produck Backlog realizado en Azure Dev Ops (2)}
+    \label{fig:comparacion_tutorias}
+\end{figure}
+
+%% ======== SECCIÓN DE LOS SPRINT PLANNING =========
+\input{sections/SprintPlaning01}
+    
+%% =================================================
+
+\subsection{Prototipo de interfaces}
+    \subsubsection{Pantalla de inicio de sesión}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\linewidth]{images/inicio_sesion.png}
+        \caption{Prototipo de inicio de sesión}
+        \label{fig:placeholder}
+    \end{figure}
+    
+    \subsubsection{Panel Principal del sistema}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{images/panel_tutorado.png}
+        \caption{Prototipo del panel del tutorado}
+        \label{fig:placeholder}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{images/panel_tutor.png}
+        \caption{Prototipo del panel del tutor}
+        \label{fig:placeholder}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{images/panel_administrador.png}
+        \caption{Prototipo del panel del administrador}
+        \label{fig:placeholder}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{images/panel_coordinador.png}
+        \caption{Prototipo del panel del coordinador}
+        \label{fig:placeholder}
+    \end{figure}
+    %\subsubsection{Formulario de Registro de tutorías}
+    
+    %\subsubsection{Panel de listado de Tutorías}
+    
+    %\subsubsection{Justificación del diseño visual}
+    
+    \subsection{Modelo de base de datos}   
+        \subsubsection{Modelo lógico de la base de datos}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=1\linewidth]{images/bd_tutorias.png}
+            \caption{Diagrama lógico entre la base de datos}
+            \label{fig:placeholder}
+        \end{figure}
+        
+        \subsubsection{Descripción de tablas principales}
+        \noindent El modelo de la base de datos está conformado por seis tablas principales:
+        \begin{itemize}
+            \item USUARIOS
+            \item TUTORES
+            \item TUTORANDOS
+            \item CRONOGRAMA
+            \item TUTORIAS
+            \item VERIFICACIONES
+        \end{itemize}
+        \subsubsection{Descripción de las relaciones}
+
+        \textbf{USUARIOS → TUTORES (1 : 1)}
+        
+        Cada tutor está vinculado a un usuario del sistema. Un usuario con rol 'Tutor' solo puede tener un perfil de tutor. Si se elimina el usuario, también se elimina el registro del tutor.
+        
+        \textbf{USUARIOS → TUTORANDOS (1 : 1)}
+        
+        Cada tutorando (alumno) es también un usuario del sistema. El registro del tutorando depende del usuario correspondiente.
+        
+        \textbf{TUTORES → TUTORANDOS (1 : N)}
+        
+        Un tutor puede tener asignados varios tutorandos, pero cada tutorando solo tiene un tutor responsable durante el semestre.
+        
+        \textbf{USUARIOS → CRONOGRAMA (1 : N)}
+        
+        Un usuario con rol 'Administrador' puede crear varios cronogramas. Cada cronograma pertenece a un único usuario creador.
+        
+        \textbf{TUTORES → TUTORIAS (1 : N)}
+        
+        Un tutor puede registrar muchas tutorías (sesiones), pero cada tutoría pertenece a un solo tutor.
+        
+        \textbf{TUTORANDOS → TUTORIAS (1 : N)}
+        
+        Cada tutorando puede participar en varias tutorías durante el semestre, pero cada tutoría pertenece
+        a un único alumno.
+        
+        \textbf{CRONOGRAMA → TUTORIAS (1 : N)}
+        
+        Un cronograma agrupa todas las tutorías programadas en las fechas oficiales del semestre.
+        
+        \textbf{USUARIOS → VERIFICACIONES (1 : N)}
+        
+        Un usuario con rol 'Verificador' puede realizar múltiples verificaciones, pero cada verificación la
+        ejecuta un solo usuario.
+        
+        \textbf{TUTORIAS → VERIFICACIONES (1 : 1)}
+        
+        Cada tutoría tiene una única verificación asociada, en la que se valida y aprueba la sesión
+        registrada. Si se elimina la tutoría, también se elimina su verificación.

@@ -1,0 +1,119 @@
+re\definecolor{micolor}{HTML}{4F94D9}
+
+\section{Sprint Planning Document}
+% Creamos la tabla inicial
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{2.5cm}|m{8.5cm}|} \hline
+
+\cellcolor{micolor} \textcolor{white} {\bf{Proyecto:}} & Sistema de información para tutorías para la Escuela Profesional de Ingeniería Informática y de sistemas  \\ \hline
+
+\cellcolor{micolor} \textcolor{white} {\bf{Sprint:}} & N° 01 \\ \hline
+
+\cellcolor{micolor} \textcolor{white} {\bf{Duración:}} & 09 al 17 de octubre \\ \hline
+
+\cellcolor{micolor} \textcolor{white} {\bf{Scrum \newline  Master:}} & Gallegos Silva Marco Abel \\ \hline
+
+\cellcolor{micolor} \textcolor{white} {\bf{Product \newline Owner:}} & Magaña Osorio Jhoel Fabrizzio \\ \hline
+
+\cellcolor{micolor} \textcolor{white} {\bf{Equipo de \newline desarrollo:}} & 
+\begin{itemize}[noitemsep, topsep=2pt, itemsep=1pt, leftmargin=*, label=$\bullet$]
+    \item Colque Quispe Fidel Enrique
+    \item Santos Pillco Eduardo Jhosef
+    \item Vasquez Mamani Raul Franshesco
+\end{itemize} \\ \hline
+   
+\end{tabular}
+\end{table}
+
+\subsection{Objetivos del Sprint 1}
+Establecer los cimientos organizativos y visuales del sistema “Sistema de Información para Tutorías”, definiendo el alcance del proyecto, configurando el entorno de trabajo colaborativo y elaborando los primeros prototipos visuales que orientarán las fases siguientes del desarrollo.
+
+\subsection*{Épicas Incluidas}
+\begin{itemize}[noitemsep, topsep=2pt, itemsep=1pt, leftmargin=*, label=$\bullet$]
+    \item \bf{E1. Planificación del Proyecto}
+    \item \bf{E2. Diseño Visual y Estructura del Proyecto}
+\end{itemize}
+
+\subsection*{Historias de usuario seleccionadas}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|m{1.5cm}|m{3.5cm}|m{9cm}|} \hline
+    
+    \cellcolor{micolor} \textcolor{white}{\bf{Código}} & \cellcolor{micolor} \textcolor{white} {\bf{Nombre}} &
+    \cellcolor{micolor} \textcolor{white} {\bf{Descripción}} \\ \hline 
+    
+    E1-HU1 & Definir herramientas de desarrollo y gestión & Como equipo de desarrollo, queremos definir las herramientas tecnológicas que se utilizarán; como lenguajes, frameworks, gestores de base de datos, entornos de diseño y despliegue, para garantizar uniformidad en el desarrollo y compatibilidad entre componentes. \\ \hline
+    
+    E1-HU2 & HU2: Definir alcance y objetivos del proyecto & Como Product Owner, quiero definir el alcance y objetivos del sistema para que el equipo tenga una visión común del producto que se va a desarrollar y se oriente correctamente durante todo el proyecto. \\ \hline 
+    
+    E1-HU3 & HU3: Organizar entorno de trabajo en Azure DevOps & Como Scrum Master, quiero establecer la organización de trabajo en la plataforma Azure DevOps para coordinar mejor las tareas, visualizar el progreso y mantener la comunicación efectiva del equipo. \\ \hline 
+    
+    E2-HU4 & HU4: Diseñar modelo de base de datos inicial & Como desarrollador, quiero tener una base de datos inicial bien estructurada para asegurar que el sistema gestione correctamente la información de alumnos, tutores y tutorías. \\ \hline 
+    
+    E2-HU5 & HU5: Diseñar wireframes principales del sistema & Como diseñador UX/UI, quiero crear los wireframes del sistema para visualizar el flujo principal de pantallas antes de pasar al desarrollo, facilitando la comprensión del diseño por parte del equipo y el cliente. \\ \hline
+    
+    \end{tabular}
+    \caption{Historias de usuario seleccionadas para el Sprint 1}
+    \label{tab:placeholder}
+\end{table}
+
+\subsection*{Desglose de tareas (Sprint Backlog)}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|m{1.5cm}|m{9.5cm}|m{1.9cm}|}
+    \hline
+
+    \cellcolor{micolor} \textcolor{white}{\bf{Historia \newline Usuario}} & \cellcolor{micolor} \textcolor{white} {\bf{Tareas}} &
+    \cellcolor{micolor} \textcolor{white} {\bf{Prioridad}} \\ \hline
+    
+    \multirow{4}{*}{E1-HU1} 
+        & T1 – Seleccionar herramientas de desarrollo backend y frontend & \textcolor{white}{------}4\\ \cline{2-3}
+        &T2 – Seleccionar herramientas de diseño y prototipado  &\textcolor{white}{------}4\\ \cline{2-3}
+        &T3 – Determinar gestor de base de datos y herramientas de modelado &\textcolor{white}{------}4\\ \cline{2-3}
+        & T4 – Documentar todas las herramientas seleccionadas en un informe formal&\textcolor{white}{------}3\\ \hline
+         
+    \multirow{4}{*}{E1-HU2}&T5 – Redactar la presentación, ámbito, problemática, objetivos y descripción del proyecto &\textcolor{white}{------}2\\ \cline{2-3}
+         &T6 – Revisar y validar el documento de presentación &\textcolor{white}{------}1\\ \cline{2-3}
+         &T7 – Elaborar el documento de planificación de Sprints y \newline Product Backlog &\textcolor{white}{------}2\\ \cline{2-3}
+         &T8 – Revisar y aprobar los documentos del Sprint 1 &\textcolor{white}{------}1\\ \hline
+         
+    \multirow{4}{*}{E1-HU2}&T9 – Crear el proyecto principal en Azure DevOps&\textcolor{white}{------}3\\ \cline{2-3}
+         &T10 – Configurar el tablero de trabajo (Boards) &\textcolor{white}{------}3\\ \cline{2-3}
+         & T11 – Registrar las épicas del proyecto&\textcolor{white}{------}4\\ \cline{2-3}
+         &T12 – Verificar permisos y sincronización del equipo &\textcolor{white}{------}2\\ \hline
+         
+    \multirow{4}{*}{E2-HU3}&T13 – Diseñar el esquema base de la base de datos&\textcolor{white}{------}3\\ \cline{2-3}
+         &T14 – Definir relaciones entre las tablas &\textcolor{white}{------}3\\ \cline{2-3}
+         &T15 – Generar el script SQL del modelo de datos&\textcolor{white}{------}3\\ \cline{2-3}
+         &T16 – Exportar y documentar el diagrama entidad-relación&\textcolor{white}{------}3\\ \hline
+         
+    \multirow{5}{*}{E2-HU4}&T17 – Crear la cuenta en Figma&\textcolor{white}{------}3\\ \cline{2-3}
+         &T18 – Crear el proyecto de diseño en Figma&\textcolor{white}{------}3\\ \cline{2-3}
+         &T19 – Diseñar la pantalla de inicio de sesión&\textcolor{white}{------}3\\ \cline{2-3}
+         &T20 – Diseñar el panel principal del sistema&\textcolor{white}{------}3\\ \cline{2-3}
+         &T21 – Diseñar el formulario de registro de tutorías &\textcolor{white}{------}3\\ \cline{2-3}
+         &T22 – Diseñar la pantalla de listado de tutorías &\textcolor{white}{------}3\\ \cline{2-3}
+         &T23 – Revisar y validar los wireframes creados&\textcolor{white}{------}2\\ \hline 
+    \end{tabular}
+    \caption{Desglose de tareas del Sprint 1 (Sprint Backlog)}
+    \label{tab:placeholder}
+\end{table}
+
+\subsection*{Definición de Hecho (Definition of Done)}
+Para que una tarea o Historia de Usuario se marque o se considere como Done, se deben considerar los sigientes aspectos:
+\begin{itemize}[noitemsep, topsep=2pt, itemsep=1pt, leftmargin=*, label=$\bullet$]
+    \item Todas las historias de usuario cumplen sus criterios de aceptación.
+    \item Los documentos y diseños fueron revisados y aprobados por el Product Owner.
+    \item El entorno de trabajo en Azure DevOps está operativo con sus épicas y tareas registradas.
+\end{itemize}
+
+\subsection*{Incremento Esperado}
+Al finalizar este Sprint, se debe contar y entregar los siguientes incrementos:
+\begin{itemize}[noitemsep, topsep=2pt, itemsep=1pt, leftmargin=*, label=$\bullet$]
+    \item Documento de planificación y objetivos del sistema.
+    \item Entorno de trabajo configurado en Azure DevOps.
+    \item Modelo de base de datos inicial validado.
+    \item Prototipos visuales del sistema (wireframes).
+\end{itemize}
