@@ -25,7 +25,6 @@ Proyecto-Tutorias/
 ## Descripción General
 
 El documento se compone en formato **académico** y usa un **estilo personalizado** desarrollado en el archivo `formato.sty`.  
-El objetivo es mantener una **estructura estandarizada**, compatible con Overleaf y compilable en **VS Code** o cualquier editor local con LaTeX.
 
 ### Archivos principales
 
@@ -59,10 +58,3 @@ Para compilar el proyecto se necesita:
 4. El archivo resultante `main.pdf` se generará en la raíz del proyecto.
 
 Si aparecen advertencias de paquetes, MiKTeX preguntará si desea instalarlos: seleccionar **Yes/Always**.
-
-### Compilación en Overleaf
-
-1. Crear un nuevo proyecto en Overleaf.  
-2. Subir todos los archivos del repositorio (manteniendo las carpetas `images/` y `sections/`).  
-3. Configurar el compilador a **pdfLaTeX** (recomendado).  
-4. Compilar.
