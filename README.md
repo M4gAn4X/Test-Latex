@@ -2,26 +2,6 @@
 
 Este repositorio contiene el proyecto en **LaTeX** para el curso **Metodologías y Desarrollo de Software I**, correspondiente al documento del **Sistema de Información para Tutorías** de la **Escuela Profesional de Ingeniería Informática y de Sistemas**.
 
-## Estructura del Proyecto
-
-Proyecto-Tutorias/
-1. main.tex # Archivo principal del documento
-2. formato.sty # Archivo de estilo y formato personalizado
-├── portada.tex # Plantilla de la portada del proyecto
-├── sections/ # Carpeta que contiene las secciones del documento
-│ ├── 1-Presentacion.tex
-│ ├── 2-AplicacionInfluencia.tex
-│ ├── 3-DescripcionProblematica.tex
-│ ├── 4-Objetivos.tex
-│ ├── 5-Descripcion del Proyecto.tex
-│ └── 6-Implementación de Proyecto.tex
-├── images/ # Carpeta con imágenes y logotipos utilizados
-│ ├── escudo.png
-│ ├── logo.png
-│ └── otras imágenes del documento
-├── bibliografia.bib # Archivo de bibliografía (si aplica)
-└── README.md # Este archivo
-
 ## Descripción General
 
 El documento se compone en formato **académico** y usa un **estilo personalizado** desarrollado en el archivo `formato.sty`.  
