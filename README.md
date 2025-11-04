@@ -5,8 +5,8 @@ Este repositorio contiene el proyecto en **LaTeX** para el curso **Metodologías
 ## Estructura del Proyecto
 
 Proyecto-Tutorias/
-├── main.tex # Archivo principal del documento
-├── formato.sty # Archivo de estilo y formato personalizado
+1. main.tex # Archivo principal del documento
+2. formato.sty # Archivo de estilo y formato personalizado
 ├── portada.tex # Plantilla de la portada del proyecto
 ├── sections/ # Carpeta que contiene las secciones del documento
 │ ├── 1-Presentacion.tex
